@@ -2,7 +2,9 @@
 Light / simple API for JSON diff and merge.
 
 Features:
-- <b>jsonDiff</b>: Get the difference between two json objects in JSON (in a format that can be used by the mergeJson function). This is a deep diff.
+- <b>jsonDiff</b>: Get the difference between two json objects as JSON (in a format that can be used by the mergeJson function). This is a JSON object containing what changed.
+  - Deep diff, handles nested objects
+  - Handles arrays of objects (objects in arrays must have a primary key (string) attribute: "id", "uid" or "date" are the defaults; you can pass mappings for a custom primary key (add, update, delete)
 - <b>mergeJson</b>: Merge edits into a JSON object.
 
 A classic usage situation is where an angular based web form has a JSON data model. A user modifies some fields and at save-time this can be used to capture exactly what changed, then load the saved copy of the data, merge edits into it, and save them (checking for save conflicts with retry-on-conflict). This would enable multiple people to edit a form at the same time without save conflicts occurring.
