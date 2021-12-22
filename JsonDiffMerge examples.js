@@ -16,18 +16,20 @@ var merged = JsonDiffMerge.mergeJson(true, originalData, {
 		actionHistory: [
 			// Update an entry in an array
 			{
-				date: "2021-12-20T04:21:38.125Z", 
+				date: "2021-12-20T04:21:38.125Z", // This property is the primary key
 				userLoginName: "testb@abc.com.au", 
 				userDisplayName: "Test B" 
 			}],
 			// Add an array entry
 			containerEntries: [{
-				id: JsonDiffMerge.newGuid(),
-				details: "TEST entry", __mergeAction: "AddOrUpdateForce"
+				id: JsonDiffMerge.newGuid(), // New primary key. It won't be found and so it will be inserted as a new entry
+				details: "TEST entry", 
+				__mergeAction: "AddOrUpdateForce"
 			},
 			// Delete an array entry where id is 1
 			{
-				id: "1", __deleted: true
+				id: "1", 
+				__deleted: true
 			}
 		],
 		// Update a propery
