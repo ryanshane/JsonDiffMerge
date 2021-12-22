@@ -37,7 +37,8 @@ var merged = JsonDiffMerge.mergeJson(true, originalData, {
 			// Add an array entry
 			{
 				id: JsonDiffMerge.newGuid(),
-				details: "TEST entry", __mergeAction: "AddOrUpdateForce"
+				details: "TEST entry", 
+				__mergeAction: "AddOrUpdateForce"
 			},
 			// Delete an array entry where id is 1
 			{
