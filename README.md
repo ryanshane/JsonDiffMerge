@@ -2,10 +2,10 @@
 API for JSON diff and merge.
 
 Features:
-- jsonDiff: Get the delta between two json objects in a format that can be used by the mergeJson function
-- mergeJson: Merge edits into a JSON object.
+- <b>jsonDiff</b>: Get the difference between two json objects in JSON (in a format that can be used by the mergeJson function)
+- <b>mergeJson</b>: Merge edits into a JSON object.
 
-A classic usage situation is where an angular based web form has a JSON data model. A user modifies some fields and at save-time, this can be used to capture exactly what changed, and then at save time, load the saved copy of the data, merge edits into it, and save them (checking for save conflicts). This would enable multiple people to edit a form at the same time without save conflicts.
+A classic usage situation is where an angular based web form has a JSON data model. A user modifies some fields and at save-time this can be used to capture exactly what changed, then load the saved copy of the data, merge edits into it, and save them (checking for save conflicts with retry-on-conflict). This would enable multiple people to edit a form at the same time without save conflicts occurring.
 
 
 ```javascript
@@ -48,3 +48,6 @@ var merged = JsonDiffMerge.mergeJson(true, originalData, {
 	}
 );
 ```
+<img src="https://github.com/ryanshane/JsonDiffMerge/blob/main/jsonDiff1.png"> 
+<img src="https://github.com/ryanshane/JsonDiffMerge/blob/main/jsonDiff2.png"> 
+<img src="https://github.com/ryanshane/JsonDiffMerge/blob/main/mergeJson.png"> 
