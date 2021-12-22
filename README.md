@@ -1,8 +1,8 @@
 # JsonDiffMerge
-API for JSON diff and merge.
+Light / simple API for JSON diff and merge.
 
 Features:
-- <b>jsonDiff</b>: Get the difference between two json objects in JSON (in a format that can be used by the mergeJson function)
+- <b>jsonDiff</b>: Get the difference between two json objects in JSON (in a format that can be used by the mergeJson function). This is a deep diff.
 - <b>mergeJson</b>: Merge edits into a JSON object.
 
 A classic usage situation is where an angular based web form has a JSON data model. A user modifies some fields and at save-time this can be used to capture exactly what changed, then load the saved copy of the data, merge edits into it, and save them (checking for save conflicts with retry-on-conflict). This would enable multiple people to edit a form at the same time without save conflicts occurring.
@@ -48,6 +48,12 @@ var merged = JsonDiffMerge.mergeJson(true, originalData, {
 	}
 );
 ```
+<br><br>
+<b>Diff example 1:</b>
 <img src="https://github.com/ryanshane/JsonDiffMerge/blob/main/jsonDiff1.png"> 
+<br><br>
+<b>Diff example 2:</b>
 <img src="https://github.com/ryanshane/JsonDiffMerge/blob/main/jsonDiff2.png"> 
+<br><br>
+<b>JSON Merge example:</b>
 <img src="https://github.com/ryanshane/JsonDiffMerge/blob/main/mergeJson.png"> 
